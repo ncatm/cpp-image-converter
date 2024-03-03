@@ -14,8 +14,6 @@ int GetBMPStride(int w) {
     return 4 * ((w * 3 + 3) / 4);
 }
 
-
-
 PACKED_STRUCT_BEGIN BitmapInfoHeader {
     BitmapInfoHeader(int width, int height)
         : biWidth(width), biHeight(height) {
@@ -45,6 +43,7 @@ PACKED_STRUCT_BEGIN BitmapFileHeader {
     uint32_t bfOffBits = 54; 
 }
 PACKED_STRUCT_END
+
 // напишите эту функцию
 bool SaveBMP(const Path& file, const Image& image) {
     BitmapFileHeader file_header { image.GetWidth(), image.GetHeight() };
